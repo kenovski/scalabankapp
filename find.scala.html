@@ -1,0 +1,45 @@
+@import org.mongodb.scala._
+@import scala.concurrent._
+@import scala.concurrent.ExecutionContext.Implicits.global
+@import scala.concurrent.duration._
+@import scala.language.postfixOps
+
+@(pox:SingleObservable[Details] )
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play Finder</h1>
+     
+
+   <table class="table table-responsive table-bordered">
+    <tr>
+      <td>Customer Name</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).name</td>
+    </tr>
+    <tr>
+      <td>Acct#</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).acctno</td>
+    </tr>
+
+    <tr>
+      <td>Phone#</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).phoneno</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).email</td>
+    </tr>
+
+    <tr>
+      <td>Opening Balance</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).opbal</td>
+    </tr>
+
+    <tr>
+      <td>Balance</td>
+      <td>@Await.result(pox.toFuture(), 3 seconds).balance</td>
+    </tr>
+     
+   </table>
+
+  
+}

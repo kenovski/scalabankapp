@@ -1,0 +1,48 @@
+@import org.mongodb.scala._
+@import scala.concurrent._
+@import scala.concurrent.ExecutionContext.Implicits.global
+@import scala.concurrent.duration._
+@import scala.language.postfixOps
+@(tox:Observable[MyDetails],cx:Seq[MyDetails] )
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play Finder</h1>
+
+     <table class="table table-responsive table-bordered">
+         <thead>
+           <tr>
+             <th>name</th>
+             <th>acctno</th>
+             <th>email</th>
+             <th>opbal</th>
+             <th>balance</th>
+           </tr>
+         </thead>
+        
+        @cx.map(bx => <tr> <td> {bx.name}</td> <td>{bx.acctno}</td> <td>{bx.email}</td> 
+        <td>{bx.opbal}</td>  <td>{bx.balance}</td>  </tr>)
+         <tr>
+          <td>
+        <h1>Total Available Deposit: @cx.map(kx => kx.balance).reduceLeft(_+_)</h1>
+      </td>
+      </tr>
+
+  </table>
+  
+  
+  
+
+
+
+  
+
+
+   
+
+     
+}
+
+
+ 
+ 
+  

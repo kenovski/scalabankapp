@@ -1,0 +1,40 @@
+@import org.mongodb.scala._
+
+@import models.Person._
+@(pbx:List[Any])
+
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play Search!</h1>
+
+  <h1>@pbx(0)</h1>
+  <h1>@pbx(1)</h1>
+  <h1>@pbx(2)</h1>
+
+  <table class="table table-responsive table-bordered">
+    
+    <tbody>
+      <tr>
+        <td>Customer Name</td>
+        <td>@pbx(0)</td>
+      </tr>
+       <tr>
+        <td>address</td>
+        <td>@pbx(1)</td>
+      </tr>
+
+      <tr>
+        <td>Phone#</td>
+        <td>@pbx(2)</td>
+      </tr>
+      
+
+    </tbody>
+    
+  </table>
+
+   
+
+
+  
+}

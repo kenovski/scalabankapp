@@ -1,0 +1,10 @@
+@(tino: Option[Map[String, Seq[String]]],cx:Double,difx:Double)
+
+@main("Welcome to Play") {
+  <h1>JAMSTCK BANK LIMITED</h1>
+
+  <h1>@tino.get("cname")</h1>
+  <h1>@tino.get("amt").head.toDouble</h1>
+  <h1>Old Balance is.............@cx</h1>
+  <h1>New Balance is............@difx</h1>
+}
